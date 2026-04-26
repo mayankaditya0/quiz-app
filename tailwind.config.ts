@@ -1,7 +1,4 @@
-
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+export default {
 
   content: ["./app/**/*.{ts,tsx}"],
 
@@ -11,7 +8,15 @@ const config: Config = {
 
       keyframes: {
 
-        slideUp: {
+        slideFromTop: {
+
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+
+          "100%": { transform: "translateY(0)", opacity: "1" }
+
+        },
+
+        slideFromBottom: {
 
           "0%": { transform: "translateY(100%)", opacity: "0" },
 
@@ -19,11 +24,27 @@ const config: Config = {
 
         },
 
-        jump: {
+        slideFromLeft: {
+
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+
+          "100%": { transform: "translateX(0)", opacity: "1" }
+
+        },
+
+        slideFromRight: {
+
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+
+          "100%": { transform: "translateX(0)", opacity: "1" }
+
+        },
+
+        bounceIn: {
 
           "0%": { transform: "scale(0.5)" },
 
-          "70%": { transform: "scale(1.2)" },
+          "60%": { transform: "scale(1.2)" },
 
           "100%": { transform: "scale(1)" }
 
@@ -33,19 +54,21 @@ const config: Config = {
 
       animation: {
 
-        slideUp: "slideUp 0.5s ease",
+        top: "slideFromTop 0.6s ease",
 
-        jump: "jump 0.4s ease"
+        bottom: "slideFromBottom 0.6s ease",
+
+        left: "slideFromLeft 0.6s ease",
+
+        right: "slideFromRight 0.6s ease",
+
+        bounceIn: "bounceIn 0.4s ease"
 
       }
 
     }
 
-  },
-
-  plugins: []
+  }
 
 };
-
-export default config;
  

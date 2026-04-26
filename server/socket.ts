@@ -2,6 +2,7 @@ import { Server } from "socket.io";
 const io = new Server(3001, {
  cors: { origin: "*" }
 });
+io.listen(3001);
 type Question = {
  question: string;
  options: string[];
